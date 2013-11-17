@@ -17,7 +17,7 @@ module.exports = function(grunt){
 			dev: {
 				options: {
 					force: true,
-					basePath: "d:/wamp/www/portfolio/montagem/",
+					basePath: "d:/wamp/www/meu_portfolio/",
                     sassDir: "assets/sass/",
                     cssDir: "assets/css/",
                     imagesDir: "assets/img/",
