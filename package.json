@@ -1,0 +1,17 @@
+{
+  "name": "Portfolio",
+  "version": "0.0.0",
+  "description": "Meu Portfólio",
+  "main": "index.html",
+  "scripts": {
+    "test": "grunt spec"
+  },
+  "author": "Washington Pontes",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-compass": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
