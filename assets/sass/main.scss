@@ -1,0 +1,412 @@
+
+@import "compass/reset";
+@import "compass/css3/shared";
+@import "compass/css3/transform";
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+// ==========================================================================
+// HELPERS
+// ==========================================================================
+
+    .clear{
+    	@extend %clear;
+    }
+
+// ==========================================================================
+// VARIÁVEIS E MIXINS
+// ==========================================================================
+
+	$width-full: 940px;
+
+	$g3: 220px;
+	$g4: 300px;
+
+	$url: '../img/';
+
+	$url-font: '../fonts/';
+
+	$verde: #2ecc71;
+	$verde-escuro: #177c42;
+	$verde-claro: #27ae60;
+	$azul: #2c3e50;
+
+	@mixin sprite($x,$y) {
+		background: url('#{$url}sprite.png') no-repeat $x $y;
+	}
+
+	@mixin center-project() {
+		width: 90%;
+		margin-left: 5%;
+	}
+
+// ==========================================================================
+// FONTS
+// ==========================================================================
+
+	@font-face {
+		font-family: 'NexaSlabHeavy';
+		src: url('#{$url-font}nexaslabheavy.eot');
+		src: url('#{$url-font}nexaslabheavy.eot?#iefix') format('embedded-opentype'),
+			 url('#{$url-font}nexaslabheavy.woff') format('woff'),
+			 url('#{$url-font}nexaslabheavy.ttf') format('truetype'),
+			 url('#{$url-font}nexaslabheavy.svg#nexaslabheavy') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'NexaLight';
+		src: url('#{$url-font}nexalight.eot');
+		src: url('#{$url-font}nexalight.eot?#iefix') format('embedded-opentype'),
+			 url('#{$url-font}nexalight.woff') format('woff'),
+			 url('#{$url-font}nexalight.ttf') format('truetype'),
+			 url('#{$url-font}nexalight.svg#nexalight') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'NexaSlabHeavyItalic';
+		src: url('#{$url-font}nexaslabheavyitalic0.eot');
+		src: url('#{$url-font}nexaslabheavyitalic0.eot?#iefix') format('embedded-opentype'),
+			 url('#{$url-font}nexaslabheavyitalic0.woff') format('woff'),
+			 url('#{$url-font}nexaslabheavyitalic0.ttf') format('truetype'),
+			 url('#{$url-font}nexaslabheavyitalic0.svg#nexaslabheavyitalic0') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+// ==========================================================================
+// PLACEHOLDERS
+// ==========================================================================
+
+	%bold{
+		font-family: 'NexaSlabHeavy';
+	}
+
+	%italic{
+		font-family: 'NexaSlabHeavyItalic';
+	}
+
+	%light{
+		font-family: 'NexaLight';
+	}
+
+	%clear{
+        zoom: 1;
+
+        &:after{
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0;
+        }
+    }
+
+// ==========================================================================
+// BASE
+// ==========================================================================
+
+	body{
+		background: url('#{$url}bg.jpg');
+		overflow-x: hidden;
+		padding-bottom: 100px;
+	}
+
+	.wrapper{
+		width: $width-full;
+		margin: 0 auto;
+		position: relative;
+		z-index: 9;
+	}
+
+	.h-sec{
+		margin-bottom: 100px;
+	}
+
+	.t-sec{
+		color: #fff;
+		text-transform: uppercase;
+		@extend %light;
+		font-size: 36px;
+		text-align: center;
+	}
+
+// ==========================================================================
+// HEADER
+// ==========================================================================
+
+	.header{
+		@extend %clear;
+		margin-top: 171px;
+	}
+
+	// AVATAR
+	// ----------------------------------------------------------------------
+
+		.avatar{
+			width: $g3;
+			height: $g3;
+			float: left;
+			border: 12px solid rgba(255,255,255, 0.2);
+			border-radius: 50%;
+		}
+		.avatar-thumb{
+			border-radius: 50%;
+		}
+
+	// APRESENTATION
+	// ----------------------------------------------------------------------
+
+		.presentation{
+			@extend %light;
+			color: #fff;
+			font-size: 25px;
+			float: right;
+			width: $g3 * 3 + 20;
+			margin-top: 68px;
+
+			strong{
+				@extend %italic;
+				color: $verde;
+			}
+		}
+
+	// SOCIALS NETWOKRS
+	// ----------------------------------------------------------------------
+
+		.list-social-networks{
+			float: left;
+			margin: 10px 0 0 39px;
+
+			li{
+				display: inline-block;
+				margin-right: 3px;
+			}
+		}
+		.link-social-network{
+			width: 32px;
+			height: 32px;
+			display: block;
+			text-indent: -999999px;
+		}
+
+		.icon-git{
+			@include sprite(0,0);
+		}
+		.icon-in{
+			@include sprite(-32px,0);
+		}
+		.icon-face{
+			@include sprite(-64px,0);
+		}
+
+// ==========================================================================
+// MAIN
+// ==========================================================================
+
+	// SKILLS
+	// ----------------------------------------------------------------------
+
+		.skills{
+			margin-top: 274px;
+			@extend %clear;
+			text-align: center;
+		}
+
+		.skill{
+			float: left;
+
+			.title{
+				@extend %bold;
+				margin-top: 43px;
+				margin-bottom: 29px;
+			}
+
+			.description{
+				color: #fff;
+				font-family: arial, verdana;
+				line-height: 1.2em;
+			}
+		}
+
+		.skill-larger{
+			width: $g4;
+			margin: 0 40px;
+
+			.title{
+				font-size: 24px;
+				color: $verde-escuro;
+			}
+
+			.description{
+				font-size: 16px;
+			}
+		}
+
+		.skill-normal{
+			width: $g3;
+
+			.title{
+				font-size: 20px;
+				color: $verde-claro;
+			}
+
+			.description{
+				font-size: 14px;
+			}
+		}
+
+		.back{
+			margin-left: 59px;
+			margin-top: 39px;
+		}
+		.design{
+			margin-top: 36px;
+		}
+
+		.icon-back-end{
+			width: 79px;
+			height: 70px;
+			display: block;
+			@include sprite(-166px,-72px);
+			margin: 0 auto;
+		}
+
+		.icon-front-end{
+			width: 166px;
+			height: 105px;
+			display: block;
+			@include sprite(0px,-32px);
+			margin: 0 auto;
+		}
+
+		.icon-webdesign{
+			width: 93px;
+			height: 72px;
+			display: block;
+			@include sprite(-166px,0px);
+			margin: 0 auto;
+		}
+
+		@mixin skewY($skew-y: $default-skew-y, $only3d: false) {
+			$trans: skewY($skew-y);
+			@include transform($trans, $only3d);
+		}
+
+		.full-screen{
+			width: 1920px;
+			position: absolute;
+			top: 151px;
+			left: 50%;
+			margin-left: -(1920px/2);
+		}
+
+		.band-large{
+			background: $verde;
+			width: 1521px;
+			height: 826px;
+			display: block;
+			position: absolute;
+			z-index: 7;
+			top: 392px;
+			left: 0;
+			@include skewY(-11deg);
+		}
+
+		.band-small{
+			background: #27ae60;
+			height: 708px;
+			width: 627px;
+			position: absolute;
+			z-index: 3;
+			top: 520px;
+			right: 0;
+			@include skewY(23deg);
+		}
+
+	// PROJECTS
+	// ----------------------------------------------------------------------
+
+		.projects{
+			margin-top: 321px;
+		}
+
+		.list-projects{
+			width: $width-full + 20;
+			@extend %clear;
+		}
+
+		.project{
+			width: $g4;
+			margin-bottom: 20px;
+			border-radius: 3px;
+			background: #fff;
+			text-align: center;
+			box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+		}
+
+		.header-project{
+
+			.image-project{
+				width: $g4;
+				height: 269px;
+				overflow: hidden;
+				border-top-right-radius: 3px;
+				border-top-left-radius: 3px;
+
+				.image{
+					width: $g4;
+				}
+			}
+
+			.title{
+				@extend %light;
+				color: $azul;
+				font-size: 18px;
+				margin-top: 35px;
+				@include center-project;
+			}
+		}
+
+		.description{
+			color: #adadac;
+			font-size: 12px;
+			line-height: 1.2em;
+			@include center-project;
+			margin-top: 15px;
+			font-family: arial, verdana;
+		}
+
+		.footer-project{
+			background: #f5f5f3;
+			border-top: 2px solid darken(#f5f5f3, 5%);
+			margin-top: 35px;
+			padding: 20px 0;
+			border-bottom-right-radius: 3px;
+			border-bottom-left-radius: 3px;
+		}
+
+		.list-technologies{
+			li{
+				display: inline-block;
+				color: #adadac;
+				font-family: arial, verdana;
+				font-size: 14px;
+
+				&:after{
+					content: ",";
+				}
+
+				&:last-child:after{
+					content: "";
+				}
+			}
+		}
