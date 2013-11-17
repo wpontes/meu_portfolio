@@ -509,16 +509,17 @@
 		// MAIN
 		// ==========================================================================
 
-
 			.full-screen{
-				width: 100%;
+				width: 320px;
 				position: absolute;
-				top: 156px;
+				top: 114px;
+				left: 0;
+				margin-left: 0;
 			}
 
 			.band-large{
 				background: $verde;
-				width: 1521px;
+				width: 320px;
 				height: 926px;
 				display: block;
 				position: absolute;
@@ -528,13 +529,6 @@
 			}
 
 			.band-small{
-				background: #27ae60;
-				height: 708px;
-				width: 627px;
-				position: absolute;
-				z-index: 3;
-				top: 520px;
-				right: 0;
 				display: none;
 			}
 
