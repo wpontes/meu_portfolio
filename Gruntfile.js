@@ -22,7 +22,7 @@ module.exports = function(grunt){
                     cssDir: "assets/css/",
                     imagesDir: "assets/img/",
                     generatedImagesDir: "assets/img/sprites/",
-                    outputStyle: "expanded"
+                    outputStyle: "compressed"
 				}
 			}
 		},
@@ -31,7 +31,7 @@ module.exports = function(grunt){
 				livereload: true
 			},
 			css: {
-				files: ['assets/sass/**/*'],
+				files: ['assets/main.scss'],
 				tasks: ['buildcss']
 			}
 		}

@@ -15,7 +15,28 @@ jQuery(document).ready(function($) {
 function carregarMasonry(){
 	telaWidth = $(window).width();
 
-	if(telaWidth>700){
+	if((telaWidth>601)&&(telaWidth<800)){
+
+		var $container = $('.list-projects');
+		// initialize
+		$container.masonry({
+			columnWidth: 303,
+			itemSelector: '.project'
+		});
+		var msnry = $container.data('masonry');
+
+	}else if((telaWidth>840)&&(telaWidth<1005)){
+
+		var $container = $('.list-projects');
+		// initialize
+		$container.masonry({
+			columnWidth: 409,
+			itemSelector: '.project'
+		});
+		var msnry = $container.data('masonry');
+
+	}else if(telaWidth>1006){
+
 		var $container = $('.list-projects');
 		// initialize
 		$container.masonry({
@@ -23,5 +44,6 @@ function carregarMasonry(){
 			itemSelector: '.project'
 		});
 		var msnry = $container.data('masonry');
+
 	}
 }

@@ -21,7 +21,15 @@
 // VARIÁVEIS E MIXINS
 // ==========================================================================
 
-	$width-full: 940px;
+	$width-desktop: 940px;
+
+	$width-tablet-vertical: 590px;
+
+	$width-tablet-horizontal: 800px;
+
+	$width-celular-vertical: 300px;
+
+	$width-celular-horizontal: 390px;
 
 	$g3: 220px;
 	$g4: 300px;
@@ -116,20 +124,12 @@
 
 	body{
 		background: url('#{$url}bg.jpg');
-		overflow-x: hidden;
-		padding-bottom: 100px;
-		width: 100%;
 	}
 
 	.wrapper{
-		width: $width-full;
 		margin: 0 auto;
 		position: relative;
 		z-index: 9;
-	}
-
-	.h-sec{
-		margin-bottom: 100px;
 	}
 
 	.t-sec{
@@ -146,17 +146,12 @@
 
 	.header{
 		@extend %clear;
-		margin-top: 171px;
 	}
 
 	// AVATAR
 	// ----------------------------------------------------------------------
 
 		.avatar{
-			width: $g3;
-			height: $g3;
-			float: left;
-			border: 12px solid rgba(255,255,255, 0.2);
 			border-radius: 50%;
 		}
 		.avatar-thumb{
@@ -169,10 +164,6 @@
 		.presentation{
 			@extend %light;
 			color: #fff;
-			font-size: 25px;
-			float: right;
-			width: $g3 * 3 + 20;
-			margin-top: 68px;
 
 			strong{
 				@extend %italic;
@@ -184,9 +175,6 @@
 	// ----------------------------------------------------------------------
 
 		.list-social-networks{
-			float: left;
-			margin: 10px 0 0 39px;
-
 			li{
 				display: inline-block;
 				margin-right: 3px;
@@ -219,33 +207,22 @@
 	}
 
 	.full-screen{
-		width: 1920px;
 		position: absolute;
-		top: 156px;
-		left: 50%;
-		margin-left: -(1920px/2);
 	}
 
 	.band-large{
 		background: $verde;
-		width: 1521px;
-		height: 826px;
 		display: block;
 		position: absolute;
 		z-index: 7;
-		top: 392px;
-		left: 0;
 		@include skewY(-11deg);
 	}
 
 	.band-small{
 		background: #27ae60;
-		height: 708px;
-		width: 627px;
 		position: absolute;
+		display: block;
 		z-index: 3;
-		top: 520px;
-		right: 0;
 		@include skewY(23deg);
 	}
 
@@ -253,19 +230,12 @@
 	// ----------------------------------------------------------------------
 
 		.skills{
-			margin-top: 274px;
 			@extend %clear;
 			text-align: center;
 		}
 
 		.skill{
-			float: left;
-
-			.title{
-				@extend %bold;
-				margin-top: 43px;
-				margin-bottom: 29px;
-			}
+			.title{ @extend %bold; }
 
 			.description{
 				color: #fff;
@@ -275,122 +245,56 @@
 		}
 
 		.skill-larger{
-			width: $g4;
-			margin: 0 40px;
-
-			.title{
-				font-size: 24px;
-				color: $verde-escuro;
-			}
-
-			.description{
-				font-size: 16px;
-			}
+			.title{ color: $verde-escuro; }
 		}
 
 		.skill-normal{
-			width: $g3;
-
 			.title{
-				font-size: 20px;
 				color: $verde-claro;
 			}
-
-			.description{
-				font-size: 14px;
-			}
 		}
 
-		.back{
-			margin-left: 59px;
-			margin-top: 39px;
-		}
-		.design{
-			margin-top: 36px;
-		}
-
-		.icon-back-end{
-			width: 79px;
-			height: 70px;
-			display: block;
-			@include sprite(-166px,-72px);
-			margin: 0 auto;
-		}
-
-		.icon-front-end{
-			width: 166px;
-			height: 105px;
-			display: block;
-			@include sprite(0px,-32px);
-			margin: 0 auto;
-		}
-
+		.icon-back-end,
+		.icon-front-end,
 		.icon-webdesign{
-			width: 93px;
-			height: 72px;
 			display: block;
-			@include sprite(-166px,0px);
 			margin: 0 auto;
 		}
 
 	// PROJECTS
 	// ----------------------------------------------------------------------
 
-		.projects{
-			margin-top: 321px;
-		}
-
-		.list-projects{
-			width: $width-full + 20;
-			@extend %clear;
-		}
-
 		.project{
-			width: $g4;
-			margin-bottom: 20px;
 			border-radius: 3px;
 			background: #fff;
 			text-align: center;
 			box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+
+			.description{
+				color: #adadac;
+				line-height: 1.2em;
+				@include center-project;
+				font-family: arial, verdana;
+			}
 		}
 
 		.header-project{
-
 			.image-project{
-				width: $g4;
-				height: 269px;
 				overflow: hidden;
 				border-top-right-radius: 3px;
 				border-top-left-radius: 3px;
-
-				.image{
-					width: $g4;
-				}
 			}
 
 			.title{
 				@extend %light;
 				color: $azul;
-				font-size: 18px;
-				margin-top: 35px;
 				@include center-project;
 			}
-		}
-
-		.description{
-			color: #adadac;
-			font-size: 12px;
-			line-height: 1.2em;
-			@include center-project;
-			margin-top: 15px;
-			font-family: arial, verdana;
 		}
 
 		.footer-project{
 			background: #f5f5f3;
 			border-top: 2px solid darken(#f5f5f3, 5%);
-			margin-top: 35px;
-			padding: 20px 0;
 			border-bottom-right-radius: 3px;
 			border-bottom-left-radius: 3px;
 		}
@@ -400,15 +304,10 @@
 				display: inline-block;
 				color: #adadac;
 				font-family: arial, verdana;
-				font-size: 14px;
 
-				&:after{
-					content: ",";
-				}
+				&:after{ content: ","; }
 
-				&:last-child:after{
-					content: "";
-				}
+				&:last-child:after{ content: ""; }
 			}
 		}
 
@@ -416,288 +315,4 @@
 // RESPONSIVE
 // ==========================================================================
 
-	@media screen and (max-width: "320px") {
-
-		body{
-			// background: #f00;
-			width: 320px;
-		}
-
-		.wrapper{
-			width: 320px;
-		}
-
-		.h-sec{
-			margin-bottom: 50px;
-		}
-
-		// ==========================================================================
-		// HEADER
-		// ==========================================================================
-
-			.header{
-				@extend %clear;
-				margin-top: 50px;
-				text-align: center;
-				width: 320px;
-			}
-
-			// AVATAR
-			// ----------------------------------------------------------------------
-
-				.avatar{
-					width: $g3 - 20;
-					height: $g3 - 20;
-					display: block;
-					margin: 0 auto;
-					float: none;
-				}
-				.avatar-thumb{
-					border-radius: 50%;
-					width: 176px;
-					height: 176px;
-				}
-
-			// APRESENTATION
-			// ----------------------------------------------------------------------
-
-				.presentation{
-					font-size: 20px;
-					display: block; //
-					float: none; //
-					width: 300px; //
-					margin-top: 20px;
-					margin-left: 10px;
-
-					strong{
-						@extend %italic;
-						color: $verde;
-					}
-				}
-
-			// SOCIALS NETWOKRS
-			// ----------------------------------------------------------------------
-
-				.list-social-networks{
-					float: none;
-					display: block;
-					margin: 15px 0 0 0;
-					text-align: center;
-
-					li{
-						display: inline-block;
-						margin-right: 3px;
-					}
-				}
-				.link-social-network{
-					width: 32px;
-					height: 32px;
-					display: block;
-					text-indent: -999999px;
-				}
-
-				.icon-git{
-					@include sprite(0,0);
-				}
-				.icon-in{
-					@include sprite(-32px,0);
-				}
-				.icon-face{
-					@include sprite(-64px,0);
-				}
-
-		// ==========================================================================
-		// MAIN
-		// ==========================================================================
-
-			.full-screen{
-				width: 320px;
-				position: absolute;
-				top: 114px;
-				left: 0;
-				margin-left: 0;
-			}
-
-			.band-large{
-				background: $verde;
-				width: 320px;
-				height: 926px;
-				display: block;
-				position: absolute;
-				z-index: 7;
-				top: 392px;
-				left: 0;
-			}
-
-			.band-small{
-				display: none;
-			}
-
-			// SKILLS
-			// ----------------------------------------------------------------------
-
-				.skills{
-					width: 320px;
-					margin-top: 196px;
-					text-align: center;
-				}
-
-				.skill{
-					display: block;
-					float: none;
-					margin: 0 auto;
-
-					.title{
-						margin-top: 18px;
-						margin-bottom: 10px;
-					}
-
-					.description{
-						color: #fff;
-						font-family: arial, verdana;
-						line-height: 1.2em;
-					}
-				}
-
-				.skill-larger{
-					width: 300px;
-
-					.title{
-						font-size: 24px;
-						color: $verde-escuro;
-					}
-
-					.description{
-						font-size: 14px;
-					}
-				}
-
-				.skill-normal{
-					width: 250px;
-
-					.title{
-						font-size: 20px;
-						color: $verde-claro;
-					}
-
-					.description{
-						font-size: 12px;
-					}
-				}
-
-				.design{
-					margin-top: 40px;
-				}
-				.front{
-					margin-top: 40px;
-				}
-
-				.icon-back-end{
-					width: 79px;
-					height: 70px;
-					display: block;
-					@include sprite(-166px,-72px);
-					margin: 0 auto;
-				}
-
-				.icon-front-end{
-					width: 166px;
-					height: 105px;
-					display: block;
-					@include sprite(0px,-32px);
-					margin: 0 auto;
-				}
-
-				.icon-webdesign{
-					width: 93px;
-					height: 72px;
-					display: block;
-					@include sprite(-166px,0px);
-					margin: 0 auto;
-				}
-
-			// PROJECTS
-			// ----------------------------------------------------------------------
-
-				.projects{
-					margin-top: 196px;
-					width: 320px;
-				}
-
-				.list-projects{
-					width: auto;
-					@extend %clear;
-				}
-
-				.project{
-					width: $g4 - 20;
-					margin-bottom: 20px;
-					margin-left: 20px;
-					border-radius: 3px;
-					background: #fff;
-					text-align: center;
-					box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
-				}
-
-				.header-project{
-
-					.image-project{
-						width: $g4 - 20;
-						height: 269px;
-						overflow: hidden;
-						border-top-right-radius: 3px;
-						border-top-left-radius: 3px;
-
-						.image{
-							width: $g4;
-						}
-					}
-
-					.title{
-						@extend %light;
-						color: $azul;
-						font-size: 18px;
-						margin-top: 35px;
-						@include center-project;
-					}
-				}
-
-				.description{
-					color: #adadac;
-					font-size: 12px;
-					line-height: 1.2em;
-					@include center-project;
-					margin-top: 15px;
-					font-family: arial, verdana;
-				}
-
-				.footer-project{
-					background: #f5f5f3;
-					border-top: 2px solid darken(#f5f5f3, 5%);
-					margin-top: 35px;
-					padding: 20px 0;
-					border-bottom-right-radius: 3px;
-					border-bottom-left-radius: 3px;
-				}
-
-				.list-technologies{
-					li{
-						display: inline-block;
-						color: #adadac;
-						font-family: arial, verdana;
-						font-size: 14px;
-
-						&:after{
-							content: ",";
-						}
-
-						&:last-child:after{
-							content: "";
-						}
-					}
-				}
-	}
-
-	@media screen and (max-width: "480px") {}
-
-
+	@import "_responsive.scss";
