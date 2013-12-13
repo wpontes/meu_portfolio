@@ -8,8 +8,7 @@ module.exports = function(grunt){
 			server: {
 				options:{
 					port: 9001,
-					hotname: '*',
-					// open: true
+					hotname: '*'
 				}
 			}
 		},
@@ -17,7 +16,7 @@ module.exports = function(grunt){
 			dev: {
 				options: {
 					force: true,
-					basePath: "d:/wamp/www/meu_portfolio/",
+					basePath: "d:/wamp/www/portfolio/",
                     sassDir: "assets/sass/",
                     cssDir: "assets/css/",
                     imagesDir: "assets/img/",
@@ -43,6 +42,5 @@ module.exports = function(grunt){
 
 	grunt.registerTask('createserver', ['connect:server']);
 	grunt.registerTask('buildcss', ['compass:dev']);
-
 	grunt.registerTask('run', ['createserver', 'watch']);
 };
